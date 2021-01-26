@@ -5,12 +5,12 @@ const onClickPost = () => {
 	const inputTweet = document.getElementById("post").value;
 	document.getElementById("post").value = "";
 
-	createtweet(inputName, inputTweet);
+	createTweet(inputName, inputTweet);
 };
 
-const createtweet = (name, tweet) => {
+const createTweet = (name, tweet) => {
 	const div = document.createElement("div");
-	div.className = "list-row";
+	div.className = "post-list";
 
 	const li = document.createElement("div");
 	li.innerText = name;
