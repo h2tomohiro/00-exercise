@@ -21,10 +21,10 @@ const init = () => {
 		} else if (e.key === 'ArrowUp' || e.key === 'Up') {
 			moveVertical(avatar, -40);
 		} else if (e.key === 'ArrowRight' || e.key === 'Right') {
-			moveHorzontal(avatar, 40);
+			moveHorizontal(avatar, 40);
 			avatar.style.transform = 'scale( 1, 1 )';
 		} else if (e.key === 'ArrowLeft' || e.key === 'Left') {
-			moveHorzontal(avatar, -30);
+			moveHorizontal(avatar, -30);
 			avatar.style.transform = 'scale( -1, 1 )';
 		}
 		if (isTouching(avatar, coin)) {
@@ -38,7 +38,7 @@ const moveVertical = (element, amount) => {
 	element.style.top = `${currTop + amount}px`;
 }
 
-const moveHorzontal = (element, amount) => {
+const moveHorizontal = (element, amount) => {
 	const currLeft = extractPos(element.style.left);
 	element.style.left = `${currLeft + amount}px`;
 };
