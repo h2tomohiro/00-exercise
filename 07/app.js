@@ -17,14 +17,14 @@ const init = () => {
 	moveCoin();
 	window.addEventListener('keyup', function (e) {
 		if (e.key === 'ArrowDown' || e.key === 'Down') {
-			moveVertical(avatar, 50);
+			moveVertical(avatar, 30);
 		} else if (e.key === 'ArrowUp' || e.key === 'Up') {
-			moveVertical(avatar, -50);
+			moveVertical(avatar, -40);
 		} else if (e.key === 'ArrowRight' || e.key === 'Right') {
-			moveHorzontal(avatar, 50);
+			moveHorzontal(avatar, 40);
 			avatar.style.transform = 'scale( 1, 1 )';
 		} else if (e.key === 'ArrowLeft' || e.key === 'Left') {
-			moveHorzontal(avatar, -50);
+			moveHorzontal(avatar, -30);
 			avatar.style.transform = 'scale( -1, 1 )';
 		}
 		if (isTouching(avatar, coin)) {
