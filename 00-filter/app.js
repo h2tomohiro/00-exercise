@@ -2,7 +2,7 @@ const result = document.querySelector('#result');
 const filter = document.querySelector('#filter');
 const listItems = [];
 
-filter.addEventListener('input', function(e){
+filter.addEventListener('input', function (e) {
 	filterData(e.target.value);
 })
 
@@ -10,7 +10,7 @@ getData();
 
 async function getData() {
 	const res = await fetch('https://randomuser.me/api?results=50')
-	const { results } = await res.json()
+	const {results} = await res.json()
 
 	result.innerHTML = ''
 
@@ -51,7 +51,7 @@ async function getData() {
 function filterData(searchTerm) {
 	listItems.forEach(item => {
 		/* add conditional logic below */
-		if(item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
+		if (item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
 			item.classList.remove('hide');
 		} else {
 			item.classList.add('hide');
