@@ -1,3 +1,4 @@
+
 const jokeEl = document.getElementById('joke');
 const getJoke = document.getElementById('get_joke');
 
@@ -12,17 +13,14 @@ async function generateJoke() {
 		}
 	});
 	const joke = await jokeRes.json();
-
-	// const ul = document.createElement("ul");
-	// ul.className = "joke-ul";
-
-	// const li = document.createElement("li");
-	// li.className = "joke"
-	//
-	// ul.appendChild(li);
 	jokeEl.innerHTML = joke.joke;
-
-	//li.appendChild(jokeEl);
-
-	//document.getElementById("joke").appendChild(li);
+	displayOldjoke(joke);
 }
+
+const displayOldjoke = (joke) => {
+	const li = document.createElement("li");
+	li.className = "joke"
+	li.innerText = joke.joke;
+	//document.getElementById("joke-ul").appendChild(li);
+}
+
