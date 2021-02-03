@@ -1,9 +1,3 @@
-document
-	.getElementById('get_joke')
-	.addEventListener('click', generateJoke);
-
-generateJoke();
-
 async function generateJoke() {
 	const jokeRes = await fetch('https://icanhazdadjoke.com/', {
 		headers: {
@@ -20,4 +14,9 @@ const displayJoke = (joke) => {
 	li.innerText = joke.joke;
 	document.getElementById("joke-ul").appendChild(li);
 }
+
+document
+	.getElementById('get_joke')
+	.addEventListener('click', generateJoke);
+
 
