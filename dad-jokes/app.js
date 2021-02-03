@@ -1,8 +1,6 @@
-
-const jokeEl = document.getElementById('joke');
-const getJoke = document.getElementById('get_joke');
-
-getJoke.addEventListener('click', generateJoke);
+document
+	.getElementById('get_joke')
+	.addEventListener('click', generateJoke);
 
 generateJoke();
 
@@ -13,14 +11,13 @@ async function generateJoke() {
 		}
 	});
 	const joke = await jokeRes.json();
-	jokeEl.innerHTML = joke.joke;
-	displayOldjoke(joke);
+	displayJoke(joke);
 }
 
-const displayOldjoke = (joke) => {
+const displayJoke = (joke) => {
 	const li = document.createElement("li");
 	li.className = "joke"
 	li.innerText = joke.joke;
-	//document.getElementById("joke-ul").appendChild(li);
+	document.getElementById("joke-ul").appendChild(li);
 }
 
